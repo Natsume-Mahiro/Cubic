@@ -1,11 +1,10 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SpriteAnimation : MonoBehaviour
 {
     [SerializeField] Sprite[] frames; // アニメーションのスプライトフレーム配列
-    [SerializeField] float frameRate; // フレームの更新レート
+    [SerializeField] float frameRate; // アニメーションのかかる時間
 
     private Image image;
     private int currentFrameIndex;
