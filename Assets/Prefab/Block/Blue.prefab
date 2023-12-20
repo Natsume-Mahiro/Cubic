@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2257758537819994319}
   - component: {fileID: 5055413401275602783}
   - component: {fileID: 2919774853467333993}
-  - component: {fileID: 2226963526947915179}
   m_Layer: 9
   m_Name: Blue
   m_TagString: Blue
@@ -63,7 +62,6 @@ MonoBehaviour:
   - {fileID: 1817408856440280497}
   - {fileID: 8051349918531883970}
   glassType: 1
-  topGlass: []
 --- !u!65 &5055413401275602783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,27 +110,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2226963526947915179
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143355967195706885}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.1, z: 0.9}
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &373523890505309521
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class BlockScript : MonoBehaviour
         Glass_Zdown
     }
     [SerializeField] GlassType glassType = GlassType.Glass_Yup;
-    public List<GameObject> topGlass = new List<GameObject>();
+    List<GameObject> topGlass = new List<GameObject>();
 
     bool blockBool = false;
 
@@ -25,11 +25,18 @@ public class BlockScript : MonoBehaviour
         // ゲームオブジェクトの子オブジェクトを取得
         Transform[] children = GetComponentsInChildren<Transform>(true);
 
+        // 子オブジェクトにアクセス
         foreach (Transform child in children)
         {
             if (child.name == glassType.ToString())
             {
                 topGlass.Add(child.gameObject);
+
+                // BoxColliderを追加
+                BoxCollider collider = gameObject.AddComponent<BoxCollider>();
+                collider.isTrigger = true; // IsTriggerをtrueに設定
+                collider.center = child.localPosition; // センター位置を設定
+                collider.size = new Vector3(0.83f, 0.1f, 0.83f); // サイズを設定
             }
         }
 

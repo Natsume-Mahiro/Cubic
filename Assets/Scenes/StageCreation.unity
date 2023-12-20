@@ -981,7 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17d18fc980c6c248937f10a66827f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: Stage1
+  fileName: Stage2
   StageData:
   - {fileID: 4900000, guid: 32887e7e92ae71945b4eefdd27ee8074, type: 3}
   - {fileID: 4900000, guid: 0046bb95fc9c2ae4a8642c6557a9410f, type: 3}
