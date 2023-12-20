@@ -25,6 +25,13 @@ public class LoadStage : MonoBehaviour
     public void _Start()
     {
         LoadObjectsInfo();
+
+        foreach (Transform child in parentObject.transform)
+        {
+            // 子オブジェクトの名前から_以降の文字を削除する
+            string[] nameParts = child.gameObject.name.Split('(');
+            child.gameObject.name = nameParts[0];
+        }
     }
 
     void LoadObjectsInfo()

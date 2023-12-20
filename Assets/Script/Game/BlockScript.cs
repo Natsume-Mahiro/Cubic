@@ -12,14 +12,6 @@ public class BlockScript : MonoBehaviour
 
     void Start()
     {
-        string objectName = gameObject.name;
-        if (objectName.Contains("_"))
-        {
-            int underscoreIndex = objectName.IndexOf("_");
-            string newName = objectName.Substring(0, underscoreIndex);
-            gameObject.name = newName;
-        }
-        
         BlockManager.Instance.AddBlock(gameObject, false, GlassYUp);
 
         foreach (MeshRenderer targetRenderer in targetRenderers)

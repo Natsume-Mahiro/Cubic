@@ -8,6 +8,22 @@ public class SaveStage : MonoBehaviour
     [SerializeField] private string fileName = "GameObjectInfo.json"; // JSONファイル名
     private string folderName = "StageData"; // 保存先フォルダ名
 
+    void Start()
+    {
+        if (parentObject == null)
+        {
+            Debug.LogWarning("親オブジェクトが指定されていません。");
+            return;
+        }
+
+        foreach (Transform child in parentObject.transform)
+        {
+            // 子オブジェクトの名前から_以降の文字を削除する
+            string[] nameParts = child.gameObject.name.Split('_');
+            child.gameObject.name = nameParts[0];
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -18,11 +34,7 @@ public class SaveStage : MonoBehaviour
 
     void SaveObjectsInfo()
     {
-        if (parentObject == null)
-        {
-            Debug.LogWarning("親オブジェクトが指定されていません。");
-            return;
-        }
+        if (parentObject == null) return;
 
         List<GameObjectInfo> objectsInfo = new List<GameObjectInfo>();
 
