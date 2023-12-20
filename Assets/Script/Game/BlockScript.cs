@@ -6,13 +6,34 @@ public class BlockScript : MonoBehaviour
     [SerializeField] Color emissionColor = Color.red; // 変更したいEmissionの色
     [SerializeField] MeshRenderer[] targetRenderers; // 変更したいRenderer
 
-    [SerializeField] List<GameObject> GlassYUp = new List<GameObject>();
+    enum GlassType
+    {
+        Glass_Xup,
+        Glass_Yup,
+        Glass_Zup,
+        Glass_Xdown,
+        Glass_Ydown,
+        Glass_Zdown
+    }
+    [SerializeField] GlassType glassType = GlassType.Glass_Yup;
+    public List<GameObject> topGlass = new List<GameObject>();
 
     bool blockBool = false;
 
     void Start()
     {
-        BlockManager.Instance.AddBlock(gameObject, false, GlassYUp);
+        // ゲームオブジェクトの子オブジェクトを取得
+        Transform[] children = GetComponentsInChildren<Transform>(true);
+
+        foreach (Transform child in children)
+        {
+            if (child.name == glassType.ToString())
+            {
+                topGlass.Add(child.gameObject);
+            }
+        }
+
+        BlockManager.Instance.AddBlock(gameObject, false, topGlass);
 
         foreach (MeshRenderer targetRenderer in targetRenderers)
         {

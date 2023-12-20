@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 864921599}
-  fileName: Stage2.json
+  fileName: Stage2
 --- !u!4 &864921601
 Transform:
   m_ObjectHideFlags: 0

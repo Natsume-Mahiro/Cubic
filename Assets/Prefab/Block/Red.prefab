@@ -62,8 +62,8 @@ MonoBehaviour:
   - {fileID: 6508541695839341493}
   - {fileID: 2761155499563801940}
   - {fileID: 7397486086963510106}
-  GlassYUp:
-  - {fileID: 3632907088478008359}
+  glassType: 1
+  topGlass: []
 --- !u!65 &4277056357114151893
 BoxCollider:
   m_ObjectHideFlags: 0
